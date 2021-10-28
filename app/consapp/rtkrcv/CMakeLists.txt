@@ -36,7 +36,7 @@ SET(SOURCES
 	${SRC}/rcv/septentrio.c
     )
 add_executable(rtkrcv ${SOURCES})
-target_include_directories(rtkrcv PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(rtkrcv PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(rtkrcv PRIVATE ${RTKLIB_DEFINES})
 target_link_libraries(rtkrcv PRIVATE Threads::Threads)
 

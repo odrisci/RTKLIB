@@ -9,7 +9,7 @@ SET(SOURCES
 	${SRC}/preceph.c
     )
 add_executable(pos2kml ${SOURCES})
-target_include_directories(pos2kml PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(pos2kml PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(pos2kml PRIVATE ${RTKLIB_DEFINES})
 
 install(TARGETS pos2kml

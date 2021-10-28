@@ -23,7 +23,7 @@ SET(SOURCES
 	${SRC}/tides.c
     )
 add_executable(rnx2rtkp ${SOURCES})
-target_include_directories(rnx2rtkp PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(rnx2rtkp PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(rnx2rtkp PRIVATE ${RTKLIB_DEFINES})
 
 install(TARGETS rnx2rtkp

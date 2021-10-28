@@ -26,7 +26,7 @@ set(SOURCES
 	${SRC}/rcv/septentrio.c
     )
 add_executable(convbin ${SOURCES})
-target_include_directories(convbin PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(convbin PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(convbin PRIVATE ${RTKLIB_DEFINES})
 
 install(TARGETS convbin
