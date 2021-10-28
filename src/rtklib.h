@@ -50,7 +50,17 @@ extern "C" {
 #endif
 
 #ifdef WIN_DLL
+#ifndef SHARED_LIB
+#define SHARED_LIB
+#endif
+#endif
+
+#ifdef SHARED_LIB
+#ifdef WIN32
 #define EXPORT __declspec(dllexport) /* for Windows DLL */
+#else
+#define EXPORT
+#endif
 #else
 #define EXPORT
 #endif
