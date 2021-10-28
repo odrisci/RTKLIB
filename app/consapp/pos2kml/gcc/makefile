@@ -1,9 +1,17 @@
 # makefile for pos2kml
+ifeq ($(OS),Windows_NT)
+	uname_S := Windows
+else
+	uname_S := $(shell uname -s)
+endif
 
 BINDIR = /usr/local/bin
 SRC    = ../../../../src
 CFLAGS = -Wall -O3 -ansi -pedantic -I$(SRC) -DTRACE
-LDLIBS  = -lm -lrt
+LDLIBS = -lm
+ifneq ($(uname_S),Darwin)
+	LDLIBS += -lrt
+endif
 
 pos2kml    : pos2kml.o convkml.o convgpx.o solution.o geoid.o rtkcmn.o preceph.o
 

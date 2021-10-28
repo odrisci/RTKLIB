@@ -1,4 +1,9 @@
 # makefile for rtkrcv
+ifeq ($(OS),Windows_NT)
+	uname_S := Windows
+else
+	uname_S := $(shell uname -s)
+endif
 
 BINDIR = /usr/local/bin
 SRC    = ../../../../src
@@ -7,7 +12,10 @@ CTARGET= -DENAGLO -DENAQZS -DENACMP -DENAGAL -DENAIRN -DNFREQ=5 -DSVR_REUSEADDR
 #CTARGET= -DENAGLO -DENAQZS -DENACMP -DENAGAL -DENAIRN -DNFREQ=3 -DIERS_MODEL -DSVR_REUSEADDR
 
 CFLAGS = -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) -I.. -DTRACE $(CTARGET) -g
-LDLIBS  = -lm -lrt -lpthread
+LDLIBS  = -lm -lpthread
+ifneq ($(uname_S),Darwin)
+	LDLIBS += -lrt
+endif
 #LDLIBS  = ../../../lib/iers/gcc/iers.a -lm -lrt -lpthread
 
 all        : rtkrcv
