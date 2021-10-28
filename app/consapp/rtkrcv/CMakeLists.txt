@@ -1,6 +1,6 @@
-set(SRC ${CMAKE_SOURCE_DIR}/src)
-SET(SOURCES 
-    rtkrcv.c 
+set(SRC ${PROJECT_SOURCE_DIR}/src)
+SET(SOURCES
+    rtkrcv.c
     vt.c
 	${SRC}/rtkcmn.c
 	${SRC}/rtksvr.c

@@ -1,5 +1,5 @@
-set(SRC ${CMAKE_SOURCE_DIR}/src)
-SET(SOURCES 
+set(SRC ${PROJECT_SOURCE_DIR}/src)
+SET(SOURCES
     str2str.c
 	${SRC}/stream.c
 	${SRC}/streamsvr.c

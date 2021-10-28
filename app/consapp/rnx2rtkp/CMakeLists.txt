@@ -1,4 +1,4 @@
-set(SRC ${CMAKE_SOURCE_DIR}/src)
+set(SRC ${PROJECT_SOURCE_DIR}/src)
 SET(SOURCES 
     rnx2rtkp.c
 	${SRC}/rtkcmn.c

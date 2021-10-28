@@ -1,4 +1,4 @@
-set(SRC ${CMAKE_SOURCE_DIR}/src)
+set(SRC ${PROJECT_SOURCE_DIR}/src)
 set(SOURCES 
     convbin.c
 	${SRC}/rtkcmn.c
