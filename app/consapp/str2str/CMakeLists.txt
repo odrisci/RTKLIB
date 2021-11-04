@@ -31,4 +31,4 @@ target_link_libraries(str2str PRIVATE Threads::Threads)
 
 install(TARGETS str2str
     EXPORT rtklibTargets
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION ${RTKLIB_BINDIR})

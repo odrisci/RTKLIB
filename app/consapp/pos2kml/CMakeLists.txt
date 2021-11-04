@@ -17,4 +17,4 @@ endif()
 
 install(TARGETS pos2kml
     EXPORT rtklibTargets
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION ${RTKLIB_BINDIR})

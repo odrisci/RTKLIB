@@ -34,4 +34,4 @@ endif()
 
 install(TARGETS convbin
     EXPORT rtklibTargets
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION ${RTKLIB_BINDIR})
