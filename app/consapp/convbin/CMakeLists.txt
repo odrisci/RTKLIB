@@ -28,6 +28,9 @@ set(SOURCES
 add_executable(convbin ${SOURCES})
 target_include_directories(convbin PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(convbin PRIVATE ${RTKLIB_DEFINES})
+if(MSVC)
+	target_link_libraries(convbin winmm.lib)
+endif()
 
 install(TARGETS convbin
     EXPORT rtklibTargets

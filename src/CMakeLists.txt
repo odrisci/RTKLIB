@@ -58,6 +58,10 @@ target_compile_definitions(rtklib PRIVATE
     SHARED_LIB
     ${RTKLIB_DEFINES})
 
+if(MSVC)
+	target_link_libraries(rtklib PRIVATE winmm.lib wsock32 ws2_32)
+endif()
+
 install(TARGETS rtklib
     EXPORT rtklibTargets
     LIBRARY DESTINATION lib
