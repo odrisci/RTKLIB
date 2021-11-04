@@ -31,4 +31,4 @@ endif()
 
 install(TARGETS rnx2rtkp
     EXPORT rtklibTargets
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION ${RTKLIB_BINDIR})

@@ -42,4 +42,4 @@ target_link_libraries(rtkrcv PRIVATE Threads::Threads)
 
 install(TARGETS rtkrcv
     EXPORT rtklibTargets
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION ${RTKLIB_BINDIR})
