@@ -28,6 +28,11 @@ add_executable(str2str ${SOURCES})
 target_include_directories(str2str PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(str2str PRIVATE ${RTKLIB_DEFINES})
 target_link_libraries(str2str PRIVATE Threads::Threads)
+if(MSVC)
+    target_link_libraries(str2str PRIVATE winmm.lib)
+else()
+    target_link_libraries(str2str PRIVATE m)
+endif()
 
 install(TARGETS str2str
     EXPORT rtklibTargets

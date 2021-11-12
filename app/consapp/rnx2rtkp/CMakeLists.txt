@@ -27,6 +27,8 @@ target_include_directories(rnx2rtkp PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(rnx2rtkp PRIVATE ${RTKLIB_DEFINES})
 if(MSVC)
 	target_link_libraries(rnx2rtkp winmm.lib)
+else()
+    target_link_libraries(rnx2rtkp m)
 endif()
 
 install(TARGETS rnx2rtkp

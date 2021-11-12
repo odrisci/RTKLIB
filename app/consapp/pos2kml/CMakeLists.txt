@@ -13,6 +13,8 @@ target_include_directories(pos2kml PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(pos2kml PRIVATE ${RTKLIB_DEFINES})
 if(MSVC)
 	target_link_libraries(pos2kml winmm.lib)
+else()
+    target_link_libraries(pos2kml m)
 endif()
 
 install(TARGETS pos2kml

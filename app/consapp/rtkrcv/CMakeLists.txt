@@ -39,6 +39,11 @@ add_executable(rtkrcv ${SOURCES})
 target_include_directories(rtkrcv PUBLIC ${PROJECT_SOURCE_DIR}/src)
 target_compile_definitions(rtkrcv PRIVATE ${RTKLIB_DEFINES})
 target_link_libraries(rtkrcv PRIVATE Threads::Threads)
+if(MSVC)
+    target_link_libraries(rtkrcv PRIVATE winmm.lib)
+else()
+    target_link_libraries(rtkrcv PRIVATE m)
+endif()
 
 install(TARGETS rtkrcv
     EXPORT rtklibTargets

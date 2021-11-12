@@ -60,6 +60,8 @@ target_compile_definitions(rtklib PRIVATE
 
 if(MSVC)
 	target_link_libraries(rtklib PRIVATE winmm.lib wsock32 ws2_32)
+else()
+	target_link_libraries(rtklib PRIVATE m)
 endif()
 
 install(TARGETS rtklib
