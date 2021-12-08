@@ -94,7 +94,7 @@ static void printhelp(void)
 int main(int argc, char **argv)
 {
     prcopt_t prcopt=prcopt_default;
-    solopt_t solopt=solopt_default;
+    solopt_t solopt=solopt_default; solopt.outopt=1;
     filopt_t filopt={""};
     gtime_t ts={0},te={0};
     double tint=0.0,es[]={2000,1,1,0,0,0},ee[]={2000,12,31,23,59,59},pos[3];
