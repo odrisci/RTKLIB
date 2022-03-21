@@ -1,0 +1,8 @@
+add_subdirectory(convbin)
+add_subdirectory(rnx2rtkp)
+if(MSVC)
+else()
+    add_subdirectory(pos2kml)
+    add_subdirectory(rtkrcv)
+    add_subdirectory(str2str)
+endif()

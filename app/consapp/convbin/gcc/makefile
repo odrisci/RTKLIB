@@ -1,6 +1,11 @@
 #
 # makefile for convbin
 #
+ifeq ($(OS),Windows_NT)
+	uname_S := Windows
+else
+	uname_S := $(shell uname -s)
+endif
 
 BINDIR = /usr/local/bin
 
@@ -11,7 +16,10 @@ OPTIONS= -DTRACE -DENAGLO -DENAQZS -DENAGAL -DENACMP -DENAIRN -DNFREQ=5 -DNEXOBS
 
 CFLAGS = -O3 -ansi -pedantic -Wall -Wno-unused-but-set-variable $(INCLUDE) $(OPTIONS) -g
 
-LDLIBS = -lm -lrt
+LDLIBS = -lm
+ifneq ($(uname_S),Darwin)
+	LDLIBS += -lrt
+endif
 
 all  : convbin
 

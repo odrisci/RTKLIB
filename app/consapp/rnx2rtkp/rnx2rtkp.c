@@ -94,7 +94,7 @@ static void printhelp(void)
 int main(int argc, char **argv)
 {
     prcopt_t prcopt=prcopt_default;
-    solopt_t solopt=solopt_default;
+    solopt_t solopt=solopt_default; solopt.outopt=1;
     filopt_t filopt={""};
     gtime_t ts={0},te={0};
     double tint=0.0,es[]={2000,1,1,0,0,0},ee[]={2000,12,31,23,59,59},pos[3];
@@ -136,12 +136,12 @@ int main(int argc, char **argv)
         else if (!strcmp(argv[i],"-sys")&&i+1<argc) {
             for (p=argv[++i];*p;p++) {
                 switch (*p) {
-                    case 'G': prcopt.navsys|=SYS_GPS;
-                    case 'R': prcopt.navsys|=SYS_GLO;
-                    case 'E': prcopt.navsys|=SYS_GAL;
-                    case 'J': prcopt.navsys|=SYS_QZS;
-                    case 'C': prcopt.navsys|=SYS_CMP;
-                    case 'I': prcopt.navsys|=SYS_IRN;
+                    case 'G': prcopt.navsys|=SYS_GPS; break;
+                    case 'R': prcopt.navsys|=SYS_GLO; break;
+                    case 'E': prcopt.navsys|=SYS_GAL; break;
+                    case 'J': prcopt.navsys|=SYS_QZS; break;
+                    case 'C': prcopt.navsys|=SYS_CMP; break;
+                    case 'I': prcopt.navsys|=SYS_IRN; break;
                 }
                 if (!(p=strchr(p,','))) break;
             }
